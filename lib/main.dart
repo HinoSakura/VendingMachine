@@ -26,7 +26,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   bool _disablecola = true;
   bool _disablesprite = true;
 
-  bool _getstate(){
+  bool _getstate(){                         //判斷cola狀態
     if(_counter>=20){
       _disablecola = false;
     }
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     return _disablecola;
   }
 
-  bool _getsprite(){
+  bool _getsprite(){                        //判斷sprite狀態
     if(_counter>=30){
       _disablesprite = false;
     }
@@ -118,19 +118,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     });
   }
 
-  void _camount(){
+  void _camount(){                    //cola補貨
     setState(() {
       _c++;
     });
   }
 
-  void _samount(){
+  void _samount(){                    //sprite補貨
     setState(() {
       _s++;
     });
   }
 
-  void _retreat(){                  //剩餘10硬幣
+  void _retreat(){                    //退幣
     setState(() {
       if(_counter >= 50 && _fiftycoin > 0){
         //print('Quit $_counter');
@@ -156,13 +156,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     });
   }
 
-  void _cointen(){
+  void _cointen(){                  //補10元coin
     setState(() {
       _tencoin++;
     });
   }
 
-  void _coinfifty(){
+  void _coinfifty(){                //補50元coin
     setState(() {
       _fiftycoin++;
     });
@@ -171,7 +171,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    tabController = new TabController(length: 4, vsync: this);
+    tabController = new TabController(length: 4, vsync: this);      //設定有4個TabBar
     super.initState();
   }
 
@@ -316,7 +316,7 @@ class _VendingmachineState extends State<Vendingmachine> {
             left: 300,
             child: Image.network('https://i.imgur.com/MCd6Ukn.png'),
           ),
-          Positioned(                                           //身上的錢
+          Positioned(                                           //販賣機中的錢
             top: 300,
             left: 0,
             child: Text(widget.coin),
@@ -324,7 +324,7 @@ class _VendingmachineState extends State<Vendingmachine> {
           Positioned(
             top: 250,
             left: 70,
-            child: RaisedButton(
+            child: RaisedButton(                              //disable按鈕
               child: /*Text( this.error() ? 'error' : 'Buy Cola'),*/
                 Text(this.widget.disable()? '':'But Cola'),
               //Text('Buy Cola'),
@@ -338,7 +338,7 @@ class _VendingmachineState extends State<Vendingmachine> {
           Positioned(
             top: 250,
             left: 380,
-            child: RaisedButton(
+            child: RaisedButton(                            //disable按鈕
               child: /*Text('Buy Sprite'),*/
                 Text(this.widget.disables()? '':'Buy Sprite'),
               onPressed:
@@ -350,7 +350,7 @@ class _VendingmachineState extends State<Vendingmachine> {
           Positioned(
             top: 320,
             left: 0,
-            child: RaisedButton(
+            child: RaisedButton(                            //退幣按鈕
               child: Text('Retreat'),
               onPressed: (){
                 this.widget.retreat();
@@ -377,13 +377,13 @@ class Servercommodity extends StatelessWidget{
         Container(
           child: Text(amount),
         ),
-        RaisedButton(
+        RaisedButton(                             //按鈕補貨cola
           child: Text('Reorder Cola'),
           onPressed: (){
             this.reordercola();
           },
         ),
-        RaisedButton(
+        RaisedButton(                              //按鈕補貨sprite
           child: Text('Reorder Sprite'),
           onPressed: (){
             this.reordersprite();
@@ -407,13 +407,13 @@ class Servercoin extends StatelessWidget{
         Container(
           child: Text(coinamount),
         ),
-        RaisedButton(
+        RaisedButton(                                 //按鈕補10元coin
           child:Text('Reorder 10 Coin'),
           onPressed: (){
             this.reordertencoin();
           },
         ),
-        RaisedButton(
+        RaisedButton(                                 //按鈕補50元coin
           child: Text('Reorder 50 Coin'),
           onPressed: (){
             this.reorderfiftycoin();
