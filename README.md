@@ -1,6 +1,6 @@
 # vendingmachine
 
-A new Flutter project.
+一個販賣機的範例程式
 
 ## Getting Started
 
