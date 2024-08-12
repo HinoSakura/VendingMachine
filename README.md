@@ -1,16 +1,3 @@
-# vendingmachine
+# VendingMachine 販賣機
 
-一個販賣機的範例程式
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+利用Flutter開發試做一個小型範例，使用了Flutter中的基本功能實現了一個虛擬販賣機
