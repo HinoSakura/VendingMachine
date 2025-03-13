@@ -6,8 +6,11 @@
 3.購買商品  
 4.補貨商品、補足零錢  
 
-🛠 技術架構
+## 🛠 技術架構
 前端框架：Flutter
 
-📦 環境安裝與設定
+## 📦 環境安裝與設定
 1️⃣ 安裝 Flutter 環境 請先安裝 Flutter SDK，參考官方文件：[Flutter](https://docs.flutter.dev/)
+
+## 
+ps.由於屬於Flutter Ver.1 實作，部分按鈕功能已更換成新的Button請自行更新
